@@ -11,6 +11,8 @@
  * @returns numero de telefone formatado
  */
 function formatPhoneNumber(numbers) {
+  if (numbers.length != 10 && numbers.length != 11) return '';
+  if (numbers.some((n) => isNaN(Number(n)) || n > 9 || n < 0)) return '';
   const copy = [...numbers];
   const firstTwo = copy.splice(0, 2).join('');
   const lastFour = copy.splice(copy.length - 4, 4).join('');
