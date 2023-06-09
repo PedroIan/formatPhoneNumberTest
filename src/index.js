@@ -11,11 +11,10 @@
  * @returns numero de telefone formatado
  */
 function formatPhoneNumber(numbers) {
-  // implemente o codigo aqui
   const copy = [...numbers];
-  const firstTwo = copy.splice(0, 2);
-  const lastFour = copy.splice(copy.length - 4, 4);
-  return `(${firstTwo}) ${copy}-${lastFour}`;
+  const firstTwo = copy.splice(0, 2).join('');
+  const lastFour = copy.splice(copy.length - 4, 4).join('');
+  return `(${firstTwo}) ${copy.join('')}-${lastFour}`;
 }
 
 module.exports = formatPhoneNumber;
